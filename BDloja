@@ -1,0 +1,25 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Principal{
+    public static void main(String[] args){
+        String url = "jdbc:mysql://localhost:3306/loja";
+        String usuario = "root";
+        String senha = "";
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Drive carregado om sucesso!");
+        } catch (Exception e) {
+            System.out.println("Erro ao carregar o drive!");
+        }
+
+        try{
+            Connection conexao = DriverManager.getConnection(url, usuario, senha);
+            System.out.println("Conectado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("Erro ao conectar!");
+        }
+    }
+}
+
